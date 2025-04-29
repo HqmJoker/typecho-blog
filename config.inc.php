@@ -27,6 +27,12 @@ $dbUser = getenv('MYSQLUSER') !== false ? getenv('MYSQLUSER') : (defined('MYSQLU
 $dbPassword = getenv('MYSQLPASSWORD') !== false ? getenv('MYSQLPASSWORD') : (defined('MYSQLPASSWORD') ? MYSQLPASSWORD : '');
 $dbDatabase = getenv('MYSQLDATABASE') !== false ? getenv('MYSQLDATABASE') : (defined('MYSQLDATABASE') ? MYSQLDATABASE : 'typecho');
 
+$dbHost = $_SERVER['MYSQLHOST'] ?? 'localhost';
+$dbPort = $_SERVER['MYSQLPORT'] ?? 3306;
+$dbUser = $_SERVER['MYSQLUSER'] ?? '';
+$dbPassword = $_SERVER['MYSQLPASSWORD'] ?? '';
+$dbDatabase = $_SERVER['MYSQLDATABASE'] ?? 'typecho';
+
 $db->addServer(array (
   'host' => $dbHost,
   'port' => $dbPort,
