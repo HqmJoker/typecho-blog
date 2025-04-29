@@ -20,13 +20,6 @@ require_once __TYPECHO_ROOT_DIR__ . '/var/Typecho/Common.php';
 // config db
 $db = new \Typecho\Db('Mysqli', 'typecho_');
 
-// 从环境变量获取数据库配置，如果环境变量不存在则使用默认值
-$dbHost = getenv('MYSQLHOST') !== false ? getenv('MYSQLHOST') : (defined('MYSQLHOST') ? MYSQLHOST : 'localhost');
-$dbPort = getenv('MYSQLPORT') !== false ? getenv('MYSQLPORT') : (defined('MYSQLPORT') ? MYSQLPORT : 3306);
-$dbUser = getenv('MYSQLUSER') !== false ? getenv('MYSQLUSER') : (defined('MYSQLUSER') ? MYSQLUSER : 'root');
-$dbPassword = getenv('MYSQLPASSWORD') !== false ? getenv('MYSQLPASSWORD') : (defined('MYSQLPASSWORD') ? MYSQLPASSWORD : '');
-$dbDatabase = getenv('MYSQLDATABASE') !== false ? getenv('MYSQLDATABASE') : (defined('MYSQLDATABASE') ? MYSQLDATABASE : 'typecho');
-
 $dbHost = $_SERVER['MYSQLHOST'] ?? 'localhost';
 $dbPort = $_SERVER['MYSQLPORT'] ?? 3306;
 $dbUser = $_SERVER['MYSQLUSER'] ?? '';
