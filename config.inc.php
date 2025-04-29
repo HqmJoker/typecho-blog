@@ -39,3 +39,4 @@ $db->addServer(array (
   'sslVerify' => true,
 ), \Typecho\Db::READ | \Typecho\Db::WRITE);
 \Typecho\Db::set($db);
+
